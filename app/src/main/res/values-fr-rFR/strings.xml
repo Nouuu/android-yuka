@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mon comparateur</string>
+    <string name="hello_world">Bonjour Monde !</string>
+    <string name="bar_code">Code barres : %1$s</string>
+    <string name="quantity">Quantité : %1$s</string>
+    <string name="sell_in">Vendu en : %1$s</string>
+    <string name="ingredients">Ingrédients : %1$s</string>
+    <string name="allergic">Substances allergènes : %1$s</string>
+    <string name="additifs">Additifs : %1$s</string>
+    <string name="food_name">%1$s</string>
+    <string name="food_brand">%1$s</string>
+</resources>

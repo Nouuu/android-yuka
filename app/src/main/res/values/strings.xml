@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OpenFoodFacts</string>
+    <string name="hello_world">Hello World</string>
+    <string name="bar_code">Barcode: %1$s</string>
+    <string name="quantity">Quantity : %1$s</string>
+    <string name="sell_in">Sold in : %1$s</string>
+    <string name="ingredients">Ingredients : %1$s</string>
+    <string name="allergic">Allergics substances : %1$s</string>
+    <string name="additifs">Additifs : %1$s</string>
+    <string name="food_name">%1$s</string>
+    <string name="food_brand">%1$s</string>
+</resources>
