@@ -47,18 +47,25 @@ class ProductListFragment() : Fragment() {
         val products = mutableListOf<Product>()
         products.add(
             Product(
-                "new product",
-                "haricot",
-                "0666666",
+                "Petits pois carottes",
+                "Cassegrain",
+                "3083680085304",
                 Uri.parse("android.resource://" + resources.getResourcePackageName(R.drawable.abc_vector_test) + "/" + R.drawable.nutriscore_a),
-                'E',
+                'A',
                 Uri.parse("android.resource://" + resources.getResourcePackageName(R.drawable.placeholder) + "/" + R.drawable.placeholder),
                 142,
-                "12",
-                listOf("Japon", "France"),
-                listOf("Jambon", "Fromage"),
-                listOf("Metal", "Cacahouette"),
-                listOf("E214", "E220"),
+                "400 g (280 g net égoutté)",
+                listOf("Japon", "France", "Suisse"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
+                listOf("Aucun"),
+                listOf("Aucun"),
                 true
             )
         )
@@ -68,7 +75,7 @@ class ProductListFragment() : Fragment() {
                 "new product",
                 "haricot",
                 "0666666",
-                Uri.parse("android.resource://" + resources.getResourcePackageName(R.drawable.nutriscore_a) + "/" + R.drawable.nutriscore_a),
+                Uri.parse("android.resource://" + resources.getResourcePackageName(R.drawable.nutriscore_a) + "/" + R.drawable.nutriscore_e),
                 'E',
                 Uri.parse("android.resource://" + resources.getResourcePackageName(R.drawable.placeholder) + "/" + R.drawable.placeholder),
                 142,
