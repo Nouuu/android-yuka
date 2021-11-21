@@ -19,7 +19,7 @@ fun TVA() {
 }
 
 fun Int.isEven(): Boolean {
-    return if (this % 2 == 0) true else false;
+    return this % 2 == 0
 }
 
 fun isVoyelle(value: Char): Boolean {

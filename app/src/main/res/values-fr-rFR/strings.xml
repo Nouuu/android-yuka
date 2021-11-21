@@ -9,4 +9,7 @@
     <string name="additifs">Additifs : %1$s</string>
     <string name="food_name">%1$s</string>
     <string name="food_brand">%1$s</string>
+    <string name="product_list_header">Produits</string>
+    <string name="nutriscore">Nutriscore : %1$s</string>
+    <string name="calories">%1$s kCal/part</string>
 </resources>

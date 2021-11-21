@@ -12,7 +12,7 @@ class ProductListAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListCell {
         return ProductListCell(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_item_cell, parent, false)
+                .inflate(R.layout.product_list_cell, parent, false)
         )
     }
 

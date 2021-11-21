@@ -8,20 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
-import kotlinx.android.synthetic.main.food_view.view.*
+import kotlinx.android.synthetic.main.product_list_cell.view.*
 
-class ProductListCell(v: View) : RecyclerView.ViewHolder(v) {
+class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
 
-    val img: ImageView = v.food_img
+    val img: ImageView = v.placeholder
     val name: TextView = v.food_name
     val brand: TextView = v.food_brand
-    val nutriscore: ImageView = v.food_nutriscore
-    val bar_code: TextView = v.food_bar_code
-    val quantity: TextView = v.food_quantity
-    val sell_in: TextView = v.food_sell_in
-    val ingredients: TextView = v.food_ingredients
-    val allergic: TextView = v.food_allergic
-    val additifs: TextView = v.food_additifs
+    val bookmarked: ImageView = v.food_bookmarked
+    val nutriscore: TextView = v.food_nutriscore
+    val calories: TextView = v.food_calories
 
     companion object {
         fun setTextBold(text: String, sep: String): SpannableStringBuilder {
@@ -34,14 +30,16 @@ class ProductListCell(v: View) : RecyclerView.ViewHolder(v) {
             cell.img.setImageURI(product.imgUrl)
             cell.name.text = product.name
             cell.brand.text = product.brand
-            cell.nutriscore.setImageURI(product.nutriscore)
-            cell.bar_code.text = product.barCode
-            cell.quantity.text = product.quantity
-            cell.sell_in.text = product.countries.joinToString(", ")
-            cell.ingredients.text = product.ingredients.joinToString(", ")
-            cell.allergic.text = product.allergens.joinToString(", ")
-            cell.additifs.text = product.additives.joinToString(", ")
+            cell.bookmarked.setColorFilter(
+                if (product.bookmarked)
+                    cell.v.context.resources.getColor(R.color.icon_selected)
+                else
+                    cell.v.context.resources.getColor(R.color.icon_default)
+            )
+            cell.nutriscore.text =
+                cell.v.context.resources.getString(R.string.nutriscore, product.nutriscore)
+            cell.calories.text =
+                cell.v.context.getString(R.string.calories, product.calories.toString())
         }
     }
-
 }

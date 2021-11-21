@@ -6,11 +6,14 @@ data class Product(
     val name: String,
     val brand: String,
     val barCode: String,
-    val nutriscore: Uri,
+    val nutriscoreUri: Uri,
+    val nutriscore: Char,
     val imgUrl: Uri,
+    val calories: Int,
     val quantity: String,
     val countries: List<String>,
     val ingredients: List<String>,
     val allergens: List<String>,
-    val additives: List<String>
+    val additives: List<String>,
+    val bookmarked: Boolean
 )

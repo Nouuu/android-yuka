@@ -24,6 +24,8 @@
         android:layout_height="290dp"
         android:scaleType="centerCrop"
         android:src="@drawable/placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -50,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/food_name" />
 
     <ImageView
+        android:id="@+id/food_nutriscore"
         android:layout_width="78dp"
         android:layout_height="42dp"
         android:layout_gravity="center"
