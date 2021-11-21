@@ -1,4 +1,4 @@
-package fr.larrieu_lacoste.noe.ce_que_vous_voulez
+package fr.larrieu_lacoste.noe.ce_que_vous_voulez.model
 
 import android.net.Uri
 
