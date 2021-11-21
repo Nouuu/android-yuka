@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/productListFragment">
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductListFragment"
+        android:label="ProductListFragment" >
+        <action
+            android:id="@+id/action_productListFragment_to_productViewFragment"
+            app:destination="@id/productViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productViewFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductViewFragment"
+        android:label="ProductViewFragment" >
+        <argument
+            android:name="product"
+            app:argType="fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product" />
+    </fragment>
+</navigation>

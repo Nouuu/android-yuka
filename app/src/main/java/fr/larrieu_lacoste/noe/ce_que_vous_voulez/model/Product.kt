@@ -1,6 +1,7 @@
 package fr.larrieu_lacoste.noe.ce_que_vous_voulez.model
 
 import android.net.Uri
+import java.io.Serializable
 
 data class Product(
     val name: String,
@@ -16,4 +17,4 @@ data class Product(
     val allergens: List<String>,
     val additives: List<String>,
     val bookmarked: Boolean
-)
+) : Serializable

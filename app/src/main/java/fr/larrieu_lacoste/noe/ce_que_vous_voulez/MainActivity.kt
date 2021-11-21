@@ -1,65 +1,14 @@
 package fr.larrieu_lacoste.noe.ce_que_vous_voulez
 
-import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
-import kotlinx.android.synthetic.main.product_list_recycler.*
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.product_list_recycler)
+        setContentView(R.layout.activity_main)
         setHeaderGradiantColor()
-
-        val products = mutableListOf<Product>()
-        products.add(
-            Product(
-                "new product",
-                "haricot",
-                "0666666",
-                Uri.parse("android.resource://" + this.packageName + "/" + R.drawable.nutriscore_a),
-                'E',
-                Uri.parse("android.resource://" + this.packageName + "/" + R.drawable.placeholder),
-                142,
-                "12",
-                listOf("Japon", "France"),
-                listOf("Jambon", "Fromage"),
-                listOf("Metal", "Cacahouette"),
-                listOf("E214", "E220"),
-                true
-            )
-        )
-        products.add(
-            Product(
-                "new product",
-                "haricot",
-                "0666666",
-                Uri.parse("android.resource://" + this.packageName + "/" + R.drawable.nutriscore_a),
-                'E',
-                Uri.parse("android.resource://" + this.packageName + "/" + R.drawable.placeholder),
-                142,
-                "12",
-                listOf("Japon", "France"),
-                listOf("Jambon", "Fromage"),
-                listOf("Metal", "Cacahouette"),
-                listOf("E214", "E220"),
-                true
-            )
-        )
-
-        setProductListAdapter(products)
-    }
-
-    private fun setProductListAdapter(products: MutableList<Product>) {
-        product_list_recycler.run {
-            layoutManager =
-                LinearLayoutManager(this@MainActivity)
-            adapter = ProductListAdapter(products)
-        }
     }
 
     private fun setHeaderGradiantColor() {
