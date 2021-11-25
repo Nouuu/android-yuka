@@ -9,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
-import kotlinx.android.synthetic.main.product_view_constrained.*
+import kotlinx.android.synthetic.main.product_details_summary_fragment.*
 
-class ProductViewFragment : Fragment() {
+class ProductDetailsSummaryFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +19,7 @@ class ProductViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(
-            R.layout.product_view_constrained,
+            R.layout.product_details_summary_fragment,
             container,
             false
         )
@@ -31,7 +31,8 @@ class ProductViewFragment : Fragment() {
     }
 
     private fun fillProductDetails() {
-        val product: Product = ProductViewFragmentArgs.fromBundle(requireArguments()).product
+        val product: Product =
+            ProductDetailsSummaryFragmentArgs.fromBundle(requireArguments()).product
         food_name.text = product.name
         food_brand.text = product.brand
         food_bar_code.text = setTextBold(getString(R.string.bar_code, product.barCode), ":")

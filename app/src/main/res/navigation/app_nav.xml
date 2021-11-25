@@ -13,7 +13,7 @@
     </fragment>
     <fragment
         android:id="@+id/productViewFragment"
-        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductViewFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsSummaryFragment"
         android:label="ProductViewFragment" >
         <argument
             android:name="product"
