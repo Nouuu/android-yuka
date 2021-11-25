@@ -9,10 +9,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager
+/*        supportFragmentManager
             .beginTransaction()
             .replace(R.id.container, ProductDetailsFragment())
-            .commit()
+            .commit()*/
 
         setHeaderGradiantColor()
     }

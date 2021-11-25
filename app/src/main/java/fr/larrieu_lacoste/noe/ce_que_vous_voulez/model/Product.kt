@@ -1,8 +1,11 @@
 package fr.larrieu_lacoste.noe.ce_que_vous_voulez.model
 
 import android.net.Uri
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
+@Parcelize
 data class Product(
     val name: String,
     val brand: String,
@@ -17,4 +20,4 @@ data class Product(
     val allergens: List<String>,
     val additives: List<String>,
     val bookmarked: Boolean
-) : Serializable
+) : Parcelable

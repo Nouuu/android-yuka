@@ -27,9 +27,10 @@ class ProductDetailsSummaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fillProductDetails()
+//        fillProductDetails()
     }
 
+/*
     private fun fillProductDetails() {
         val product: Product =
             ProductDetailsSummaryFragmentArgs.fromBundle(requireArguments()).product
@@ -56,4 +57,5 @@ class ProductDetailsSummaryFragment : Fragment() {
         str.setSpan(StyleSpan(Typeface.BOLD), 0, text.indexOf(sep) + sep.length, 0)
         return str;
     }
+*/
 }
