@@ -27,13 +27,19 @@ class ProductDetailsSummaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        fillProductDetails()
+        retrieveProduct()
     }
 
-/*
-    private fun fillProductDetails() {
+    private fun retrieveProduct() {
+        val detailsFragment: ProductDetailsFragment =
+            requireParentFragment().requireParentFragment() as ProductDetailsFragment
         val product: Product =
-            ProductDetailsSummaryFragmentArgs.fromBundle(requireArguments()).product
+            ProductDetailsFragmentArgs.fromBundle(detailsFragment.requireArguments()).product
+        fillProductDetails(product)
+
+    }
+
+    private fun fillProductDetails(product: Product) {
         food_name.text = product.name
         food_brand.text = product.brand
         food_bar_code.text = setTextBold(getString(R.string.bar_code, product.barCode), ":")
@@ -57,5 +63,4 @@ class ProductDetailsSummaryFragment : Fragment() {
         str.setSpan(StyleSpan(Typeface.BOLD), 0, text.indexOf(sep) + sep.length, 0)
         return str;
     }
-*/
 }

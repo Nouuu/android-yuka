@@ -84,7 +84,7 @@ class ProductListFragment() : Fragment() {
                 listOf("Jambon", "Fromage"),
                 listOf("Metal", "Cacahouette"),
                 listOf("E214", "E220"),
-                true
+                false
             )
         )
 
