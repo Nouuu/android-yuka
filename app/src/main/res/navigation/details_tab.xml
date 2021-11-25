@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/details_tab"
+    app:startDestination="@id/tab_nutrition">
+
+    <fragment
+        android:id="@+id/tab_fiche"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsSummaryFragment"
+        android:label="ProductDetailsSummaryFragment" />
+    <fragment
+        android:id="@+id/tab_nutrition"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsNutritionFragment"
+        android:label="ProductDetailsNutritionFragment" />
+    <fragment
+        android:id="@+id/tab_tableau"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsNutritionnalValuesFragment"
+        android:label="ProductDetailsNutritionnalValuesFragment" />
+</navigation>
