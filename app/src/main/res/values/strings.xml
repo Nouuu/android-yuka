@@ -12,4 +12,7 @@
     <string name="product_list_header">Products</string>
     <string name="nutriscore">Nutriscore : %1$s</string>
     <string name="calories">%1$s kCal/part</string>
+    <string name="fiche">Fiche</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="table">Tableau</string>
 </resources>
