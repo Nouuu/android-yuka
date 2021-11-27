@@ -58,7 +58,6 @@
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@id/guideline"
             app:layout_constraintTop_toBottomOf="@id/food_name" />
-
         <ImageView
             android:id="@+id/food_bookmarked"
             android:layout_width="18dp"

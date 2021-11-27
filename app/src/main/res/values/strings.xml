@@ -15,4 +15,5 @@
     <string name="fiche">Fiche</string>
     <string name="nutrition">Nutrition</string>
     <string name="table">Tableau</string>
+    <string name="nutrionnal_rep_100g">Repères nutritionnels pour 100g</string>
 </resources>
