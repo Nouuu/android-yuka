@@ -8,8 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 import kotlinx.android.synthetic.main.product_details_summary_fragment.*
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_additifs
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_allergic
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_bar_code
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_brand
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_ingredients
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_name
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_quantity
+import kotlinx.android.synthetic.main.product_details_summary_fragment.food_sell_in
+import kotlinx.android.synthetic.main.product_view_deprecated.*
+import kotlinx.android.synthetic.main.product_view_deprecated.food_nutriscore
 
 class ProductDetailsSummaryFragment : Fragment() {
 
@@ -36,6 +48,8 @@ class ProductDetailsSummaryFragment : Fragment() {
         val product: Product =
             ProductDetailsFragmentArgs.fromBundle(detailsFragment.requireArguments()).product
         fillProductDetails(product)
+        fillPlaceholder(product)
+        setNutriscoreImg(product)
 
     }
 
@@ -56,6 +70,31 @@ class ProductDetailsSummaryFragment : Fragment() {
         food_additifs.text =
             setTextBold(getString(R.string.additifs, product.additives.joinToString(", ")), ":")
 
+    }
+
+    private fun fillPlaceholder(product: Product) {
+        Picasso.get()
+            .load(product.imgUrl)
+            .error(R.drawable.placeholder)
+            .into(placeholder, object : Callback {
+                override fun onSuccess() {}
+                override fun onError(e: Exception?) {
+                    e?.printStackTrace()
+                }
+            })
+    }
+
+    private fun setNutriscoreImg(product: Product) {
+        food_nutriscore.setImageResource(
+            when (product.nutriscore) {
+                'A' -> R.drawable.nutriscore_a
+                'B' -> R.drawable.nutriscore_b
+                'C' -> R.drawable.nutriscore_c
+                'D' -> R.drawable.nutriscore_d
+                'E' -> R.drawable.nutriscore_e
+                else -> R.drawable.nutriscore_e
+            }
+        )
     }
 
     private fun setTextBold(text: String, sep: String): SpannableStringBuilder {

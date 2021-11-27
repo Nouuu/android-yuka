@@ -16,4 +16,13 @@
     <string name="nutrition">Nutrition</string>
     <string name="table">Tableau</string>
     <string name="nutrionnal_rep_100g">Repères nutritionnels pour 100g</string>
+    <string name="fat">Matières grasses / Lipides</string>
+    <string name="satured_fat">acides gras saturés</string>
+    <string name="glucids">glucides</string>
+    <string name="sugar">sucre</string>
+    <string name="dietaryFiber">" ibres alimentaires"</string>
+    <string name="proteins">protéines</string>
+    <string name="salt">sel</string>
+    <string name="sodium">sodium</string>
+    <string name="calories_word">calories</string>
 </resources>

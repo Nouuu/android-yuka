@@ -6,12 +6,16 @@ import android.text.style.StyleSpan
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 import kotlinx.android.synthetic.main.product_list_cell.view.*
 
 class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
 
+    val card: CardView = v.card_cell
     val img: ImageView = v.placeholder
     val name: TextView = v.food_name
     val brand: TextView = v.food_brand
@@ -27,7 +31,8 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
         }
 
         fun bindProduct(cell: ProductListCell, product: Product) {
-            cell.img.setImageURI(product.imgUrl)
+            loadPlaceholderImg(product, cell)
+//            cell.img.setImageURI(product.imgUrl)
             cell.name.text = product.name
             cell.brand.text = product.brand
             cell.bookmarked.setColorFilter(
@@ -40,6 +45,20 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
                 cell.v.context.resources.getString(R.string.nutriscore, product.nutriscore)
             cell.calories.text =
                 cell.v.context.getString(R.string.calories, product.calories.toString())
+        }
+
+        private fun loadPlaceholderImg(
+            product: Product,
+            cell: ProductListCell
+        ) {
+            Picasso.get().load(product.imgUrl)
+                .error(R.drawable.placeholder)
+                .into(cell.img, object : Callback {
+                    override fun onSuccess() {}
+                    override fun onError(e: Exception?) {
+                        e?.printStackTrace()
+                    }
+                })
         }
     }
 }

@@ -19,7 +19,7 @@ class ProductListAdapter(
 
     override fun onBindViewHolder(cell: ProductListCell, position: Int) {
         ProductListCell.bindProduct(cell, products[position])
-        cell.name.setOnClickListener {
+        cell.card.setOnClickListener {
             listener.onProductClicked(products[position])
         }
     }
