@@ -19,10 +19,11 @@ class ProductDetailsNutrionalValuesRecyclerItem(v: View) : RecyclerView.ViewHold
             name: String,
             nutritionFactsItem: NutritionFactsItem
         ) {
-            println(name)
             cell.nutritionalValueName.text = name
-            cell.nutritionalValue100g.text = nutritionFactsItem.g100quantity.toString()
-            cell.nutritionalValuePart.text = nutritionFactsItem.pQuantity.toString()
+            cell.nutritionalValue100g.text =
+                nutritionFactsItem.g100quantity.toString() + nutritionFactsItem.unit
+            cell.nutritionalValuePart.text =
+                nutritionFactsItem.pQuantity.toString() + nutritionFactsItem.unit
         }
     }
 }

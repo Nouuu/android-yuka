@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout.HORIZONTAL
+import android.widget.LinearLayout.VERTICAL
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragment
@@ -35,7 +38,13 @@ class ProductDetailsNutritionalValuesFragment : Fragment() {
             requireParentFragment().requireParentFragment() as ProductDetailsFragment
         val product: Product =
             ProductDetailsFragmentArgs.fromBundle(detailsFragment.requireArguments()).product
-        println(product)
+
+
+        val horizontalSeparator = DividerItemDecoration(
+            requireContext(),
+            VERTICAL
+        )
+        nutrional_values_list_recycler.addItemDecoration(horizontalSeparator)
         nutrional_values_list_recycler.run {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ProductDetailsNutritionalValuesAdapter(product)
