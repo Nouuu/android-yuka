@@ -1,4 +1,4 @@
-package fr.larrieu_lacoste.noe.ce_que_vous_voulez
+package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 import kotlinx.android.synthetic.main.product_list_recycler.*
 

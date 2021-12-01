@@ -6,14 +6,14 @@
 
     <fragment
         android:id="@+id/tab_fiche"
-        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsSummaryFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.summary.ProductDetailsSummaryFragment"
         android:label="ProductDetailsSummaryFragment" />
     <fragment
         android:id="@+id/tab_nutrition"
-        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsNutritionFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.nutrition.ProductDetailsNutritionFragment"
         android:label="ProductDetailsNutritionFragment" />
     <fragment
         android:id="@+id/tab_tableau"
-        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.ProductDetailsNutritionnalValuesFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.nutrional_values.ProductDetailsNutritionnalValuesFragment"
         android:label="ProductDetailsNutritionnalValuesFragment" />
 </navigation>

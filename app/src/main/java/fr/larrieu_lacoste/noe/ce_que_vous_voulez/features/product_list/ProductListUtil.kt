@@ -1,7 +1,8 @@
-package fr.larrieu_lacoste.noe.ce_que_vous_voulez
+package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_list
 
 import android.content.res.Resources
 import android.net.Uri
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.NutritionFacts
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.NutritionFactsItem
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product

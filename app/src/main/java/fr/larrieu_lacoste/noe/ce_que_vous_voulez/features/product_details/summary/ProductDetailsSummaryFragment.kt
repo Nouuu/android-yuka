@@ -1,4 +1,4 @@
-package fr.larrieu_lacoste.noe.ce_que_vous_voulez
+package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.summary
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -8,9 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragment
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragmentArgs
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.PicassoUtil
 import kotlinx.android.synthetic.main.product_details_summary_fragment.*
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_additifs
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_allergic
@@ -20,7 +22,6 @@ import kotlinx.android.synthetic.main.product_details_summary_fragment.food_ingr
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_name
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_quantity
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_sell_in
-import kotlinx.android.synthetic.main.product_view_deprecated.*
 import kotlinx.android.synthetic.main.product_view_deprecated.food_nutriscore
 
 class ProductDetailsSummaryFragment : Fragment() {
@@ -73,15 +74,7 @@ class ProductDetailsSummaryFragment : Fragment() {
     }
 
     private fun fillPlaceholder(product: Product) {
-        Picasso.get()
-            .load(product.imgUrl)
-            .error(R.drawable.placeholder)
-            .into(placeholder, object : Callback {
-                override fun onSuccess() {}
-                override fun onError(e: Exception?) {
-                    e?.printStackTrace()
-                }
-            })
+        PicassoUtil.loadImg2(product.imgUrl, placeholder)
     }
 
     private fun setNutriscoreImg(product: Product) {

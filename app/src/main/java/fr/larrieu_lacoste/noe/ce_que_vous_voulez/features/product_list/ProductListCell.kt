@@ -1,4 +1,4 @@
-package fr.larrieu_lacoste.noe.ce_que_vous_voulez
+package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_list
 
 import android.graphics.Typeface
 import android.text.SpannableStringBuilder
@@ -8,9 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.PicassoUtil
 import kotlinx.android.synthetic.main.product_list_cell.view.*
 
 class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
@@ -51,14 +51,7 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
             product: Product,
             cell: ProductListCell
         ) {
-            Picasso.get().load(product.imgUrl)
-                .error(R.drawable.placeholder)
-                .into(cell.img, object : Callback {
-                    override fun onSuccess() {}
-                    override fun onError(e: Exception?) {
-                        e?.printStackTrace()
-                    }
-                })
+            PicassoUtil.loadImg2(product.imgUrl, cell.img)
         }
     }
 }

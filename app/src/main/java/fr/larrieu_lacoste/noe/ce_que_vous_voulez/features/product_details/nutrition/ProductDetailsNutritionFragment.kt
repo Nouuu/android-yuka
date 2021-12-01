@@ -1,4 +1,4 @@
-package fr.larrieu_lacoste.noe.ce_que_vous_voulez
+package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.nutrition
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragment
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragmentArgs
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.ActivityUtil
 
 class ProductDetailsNutritionFragment : Fragment() {
     override fun onCreateView(
