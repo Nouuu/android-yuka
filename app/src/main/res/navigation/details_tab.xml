@@ -14,6 +14,6 @@
         android:label="ProductDetailsNutritionFragment" />
     <fragment
         android:id="@+id/tab_tableau"
-        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.nutrional_values.ProductDetailsNutritionnalValuesFragment"
+        android:name="fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.nutrional_values.ProductDetailsNutritionalValuesFragment"
         android:label="ProductDetailsNutritionnalValuesFragment" />
 </navigation>

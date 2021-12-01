@@ -4,16 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TableRow
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragment
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragmentArgs
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 import kotlinx.android.synthetic.main.product_details_nutritional_values_fragment.*
 
-class ProductDetailsNutritionnalValuesFragment : Fragment() {
+class ProductDetailsNutritionalValuesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,11 +27,19 @@ class ProductDetailsNutritionnalValuesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setNutritionalValuesAdapter()
+    }
+
+    private fun setNutritionalValuesAdapter() {
         val detailsFragment: ProductDetailsFragment =
             requireParentFragment().requireParentFragment() as ProductDetailsFragment
         val product: Product =
             ProductDetailsFragmentArgs.fromBundle(detailsFragment.requireArguments()).product
         println(product)
+        nutrional_values_list_recycler.run {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = ProductDetailsNutritionalValuesAdapter(product)
+        }
     }
 
 }
