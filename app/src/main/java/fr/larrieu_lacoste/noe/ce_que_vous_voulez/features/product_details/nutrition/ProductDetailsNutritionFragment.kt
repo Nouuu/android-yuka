@@ -22,7 +22,7 @@ class ProductDetailsNutritionFragment : Fragment() {
             R.layout.product_details_nutrition_fragment,
             container,
             false
-        );
+        )
     }
 
     var product: Product? = null

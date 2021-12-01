@@ -20,7 +20,7 @@ class ProductDetailsFragment : Fragment() {
             R.layout.product_details_fragment,
             container,
             false
-        );
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

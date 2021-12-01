@@ -20,7 +20,7 @@ class NutritionFactsItemFragment : Fragment() {
             R.layout.nutrition_facts_item_fragment,
             container,
             false
-        );
+        )
     }
 
     var text: String = "noname"

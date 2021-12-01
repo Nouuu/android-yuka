@@ -11,7 +11,7 @@ import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 import kotlinx.android.synthetic.main.product_list_recycler.*
 
-class ProductListFragment() : Fragment() {
+class ProductListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,16 +28,18 @@ class ProductListFragment() : Fragment() {
     private fun setProductListAdapter() {
         product_list_recycler.run {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = ProductListAdapter(ProductListUtil.getProductList(resources), object : OnProductClickListener {
-                override fun onProductClicked(product: Product) {
-                    findNavController().navigate(
-                        ProductListFragmentDirections.actionProductListFragmentToProductViewFragment(
-                            product
+            adapter = ProductListAdapter(
+                ProductListUtil.getProductList(resources),
+                object : OnProductClickListener {
+                    override fun onProductClicked(product: Product) {
+                        findNavController().navigate(
+                            ProductListFragmentDirections.actionProductListFragmentToProductViewFragment(
+                                product
+                            )
                         )
-                    )
-                }
+                    }
 
-            })
+                })
         }
     }
 

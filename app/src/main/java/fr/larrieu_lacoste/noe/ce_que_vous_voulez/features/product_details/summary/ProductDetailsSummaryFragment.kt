@@ -93,6 +93,6 @@ class ProductDetailsSummaryFragment : Fragment() {
     private fun setTextBold(text: String, sep: String): SpannableStringBuilder {
         val str = SpannableStringBuilder(text)
         str.setSpan(StyleSpan(Typeface.BOLD), 0, text.indexOf(sep) + sep.length, 0)
-        return str;
+        return str
     }
 }
