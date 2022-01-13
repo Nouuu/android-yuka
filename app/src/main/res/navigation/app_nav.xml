@@ -9,7 +9,8 @@
         android:label="ProductListFragment" >
         <action
             android:id="@+id/action_productListFragment_to_productViewFragment"
-            app:destination="@id/productDetailsFragment" />
+            app:destination="@id/productDetailsFragment"
+            app:popUpTo="@id/productListFragment" />
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
