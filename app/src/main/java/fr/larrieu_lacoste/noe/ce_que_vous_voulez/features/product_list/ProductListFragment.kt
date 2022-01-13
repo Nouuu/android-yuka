@@ -1,10 +1,13 @@
 package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_list
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +30,7 @@ class ProductListFragment : Fragment() {
     }
 
     private fun setProductListAdapter() {
+
         product_list_recycler.run {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ProductListAdapter(
@@ -47,9 +51,28 @@ class ProductListFragment : Fragment() {
             val intent = Intent()
             intent.action = "com.google.zxing.client.android.SCAN"
             intent.putExtra("SCAN_FORMATS", "EAN_13")
-            startActivityForResult(intent,100)
+//            startActivityForResult(intent,100)
+            getResult.launch(intent)
         }
     }
 
+    private val getResult =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            if (it.resultCode == Activity.RESULT_OK) {
+//                val format = it.data?.getStringExtra("SCAN_RESULT_FORMAT")
+                val res = it.data?.getStringExtra("SCAN_RESULT")
 
+                if (res != null) {
+                    ProductListUtil.addProduct(res,resources)
+                }
+//                val action = EmptyFragmentDirections.actionEmptyFragmentToProductsFragment(res!!)
+//                myView.findNavController().navigate(action)
+            }
+
+            if (it.resultCode == Activity.RESULT_CANCELED) {
+                Log.e("EmptyFragment", "Scan cancelled !")
+            }
+        }
 }

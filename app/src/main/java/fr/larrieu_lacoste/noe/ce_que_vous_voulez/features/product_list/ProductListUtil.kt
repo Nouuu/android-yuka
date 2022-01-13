@@ -9,9 +9,8 @@ import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 
 class ProductListUtil {
     companion object {
+        private val products = mutableListOf<Product>()
         fun getProductList(resources: Resources): MutableList<Product> {
-
-            val products = mutableListOf<Product>()
             products.add(
                 Product(
                     "Petits pois carottes",
@@ -78,6 +77,39 @@ class ProductListUtil {
             )
 
             return products
+        }
+
+        fun addProduct(barCode: String, resources: Resources) {
+            products.add(
+                Product(
+                    "Noname",
+                    "Noname",
+                    barCode,
+                    Uri.parse("android.resource://" + resources.getResourcePackageName(R.drawable.abc_vector_test) + "/" + R.drawable.nutriscore_a),
+                    'A',
+                    "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg",
+                    0,
+                    "0 g",
+                    listOf("Japon", "France", "Suisse"),
+                    listOf(
+                        "eau"
+                    ),
+                    listOf("Aucun"),
+                    listOf("Aucun"),
+                    true,
+                    NutritionFacts(
+                        calories = NutritionFactsItem("kj", 0.0, 0.0),
+                        fat = NutritionFactsItem("g", 0.0, 0.0),
+                        saturatedFattyAcids = NutritionFactsItem("g", 0.0, 0.0),
+                        glucids = NutritionFactsItem("g", 0.0, 0.0),
+                        sugar = NutritionFactsItem("g", 0.0, 0.0),
+                        dietaryFiber = NutritionFactsItem("g", 0.0, 5.2),
+                        proteins = NutritionFactsItem("g", 0.8, 4.8),
+                        salt = NutritionFactsItem("g", 3.0, 0.75),
+                        sodium = NutritionFactsItem("g", 1.0, 0.0),
+                    )
+                )
+            )
         }
     }
 }
