@@ -31,7 +31,6 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
         }
 
         fun bindProduct(cell: ProductListCell, product: Product) {
-            loadPlaceholderImg(product, cell)
 //            cell.img.setImageURI(product.imgUrl)
             cell.name.text = product.name
             cell.brand.text = product.brand
@@ -45,6 +44,7 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
                 cell.v.context.resources.getString(R.string.nutriscore, product.nutriscore)
             cell.calories.text =
                 cell.v.context.getString(R.string.calories, product.calories.toString())
+            loadPlaceholderImg(product, cell)
         }
 
         private fun loadPlaceholderImg(

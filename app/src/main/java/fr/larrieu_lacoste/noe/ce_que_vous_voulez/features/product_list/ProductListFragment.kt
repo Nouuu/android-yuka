@@ -1,5 +1,6 @@
 package fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_list
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +41,13 @@ class ProductListFragment : Fragment() {
                     }
 
                 })
+        }
+
+        products_start_scan.setOnClickListener {
+            val intent = Intent()
+            intent.action = "com.google.zxing.client.android.SCAN"
+            intent.putExtra("SCAN_FORMATS", "EAN_13")
+            startActivityForResult(intent,100)
         }
     }
 
