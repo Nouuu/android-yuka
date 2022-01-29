@@ -12,6 +12,7 @@ import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
 class ProductListUtil {
     companion object {
         private val products = mutableListOf<Product>()
+
         @RequiresApi(Build.VERSION_CODES.N)
         fun getProductList(resources: Resources): MutableList<Product> {
             products.removeIf { product -> product.barCode == "3083680085304" || product.barCode == "0666666" }
