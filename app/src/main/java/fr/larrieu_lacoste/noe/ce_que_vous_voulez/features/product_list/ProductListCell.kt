@@ -7,10 +7,11 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
-import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.PicassoUtil
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.ImgUtil
 import kotlinx.android.synthetic.main.product_list_cell.view.*
 
 class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
@@ -30,7 +31,7 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
             return str
         }
 
-        fun bindProduct(cell: ProductListCell, product: Product) {
+        fun bindProduct(cell: ProductListCell, product: Product, parent: Fragment) {
 //            cell.img.setImageURI(product.imgUrl)
             cell.name.text = product.name
             cell.brand.text = product.brand
@@ -44,14 +45,15 @@ class ProductListCell(private val v: View) : RecyclerView.ViewHolder(v) {
                 cell.v.context.resources.getString(R.string.nutriscore, product.nutriscore)
             cell.calories.text =
                 cell.v.context.getString(R.string.calories, product.calories.toString())
-            loadPlaceholderImg(product, cell)
+            loadPlaceholderImg(product, cell, parent)
         }
 
         private fun loadPlaceholderImg(
             product: Product,
-            cell: ProductListCell
+            cell: ProductListCell,
+            parent: Fragment
         ) {
-            PicassoUtil.loadImg2(product.imgUrl, cell.img)
+            ImgUtil.loadImgWithGlade(product.imgUrl, cell.img, parent)
         }
     }
 }

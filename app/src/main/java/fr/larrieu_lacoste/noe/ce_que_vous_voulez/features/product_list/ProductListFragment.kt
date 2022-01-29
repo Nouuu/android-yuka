@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
@@ -48,7 +49,8 @@ class ProductListFragment : Fragment() {
                         )
                     }
 
-                })
+                },
+            this.findFragment())
         }
 
         products_start_scan.setOnClickListener {

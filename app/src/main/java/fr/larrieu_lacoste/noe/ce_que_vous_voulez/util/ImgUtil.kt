@@ -5,14 +5,16 @@ import android.graphics.BitmapFactory
 import android.os.Handler
 import android.os.Looper
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import java.util.concurrent.Executors
 
-class PicassoUtil {
+class ImgUtil {
     companion object {
-        fun loadImg(imgUrl: String, placeholder: ImageView) {
+        fun loadImgWithPicasso(imgUrl: String, placeholder: ImageView) {
             Picasso.get()
                 .load(imgUrl)
                 .error(R.drawable.placeholder)
@@ -24,7 +26,7 @@ class PicassoUtil {
                 })
         }
 
-        fun loadImg2(imgUrl: String, placeholder: ImageView) {
+        fun loadImgWithPicasso2(imgUrl: String, placeholder: ImageView) {
             // Declaring executor to parse the URL
             val executor = Executors.newSingleThreadExecutor()
 
@@ -57,6 +59,14 @@ class PicassoUtil {
                     e.printStackTrace()
                 }
             }
+        }
+
+        fun loadImgWithGlade(imgUrl: String, placeholder: ImageView, parent: Fragment) {
+            Glide
+                .with(parent)
+                .load(imgUrl)
+                .placeholder(R.drawable.placeholder)
+                .into(placeholder)
         }
 
     }

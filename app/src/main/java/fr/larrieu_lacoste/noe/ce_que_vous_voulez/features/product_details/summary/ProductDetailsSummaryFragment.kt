@@ -12,7 +12,7 @@ import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragment
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.features.product_details.ProductDetailsFragmentArgs
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.model.Product
-import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.PicassoUtil
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.util.ImgUtil
 import kotlinx.android.synthetic.main.product_details_summary_fragment.*
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_additifs
 import kotlinx.android.synthetic.main.product_details_summary_fragment.food_allergic
@@ -74,7 +74,7 @@ class ProductDetailsSummaryFragment : Fragment() {
     }
 
     private fun fillPlaceholder(product: Product) {
-        PicassoUtil.loadImg2(product.imgUrl, placeholder)
+        ImgUtil.loadImgWithGlade(product.imgUrl, placeholder, this)
     }
 
     private fun setNutriscoreImg(product: Product) {
