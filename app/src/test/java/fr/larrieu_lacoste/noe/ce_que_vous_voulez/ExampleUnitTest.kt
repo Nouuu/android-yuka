@@ -1,8 +1,7 @@
 package fr.larrieu_lacoste.noe.ce_que_vous_voulez
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
