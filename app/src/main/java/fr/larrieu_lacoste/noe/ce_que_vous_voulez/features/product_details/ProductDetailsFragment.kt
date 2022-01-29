@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import fr.larrieu_lacoste.noe.ce_que_vous_voulez.MainActivity
 import fr.larrieu_lacoste.noe.ce_que_vous_voulez.R
 import kotlinx.android.synthetic.main.product_details_fragment.*
 
@@ -16,11 +18,19 @@ class ProductDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        var actionbar = (activity as AppCompatActivity).supportActionBar
+        actionbar?.title = getString(R.string.details)
+
         return inflater.inflate(
             R.layout.product_details_fragment,
             container,
             false
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).showUpButton()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
